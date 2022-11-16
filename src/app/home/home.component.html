@@ -1,0 +1,50 @@
+<link href="https://fonts.googleapis.com/css?family=Abel&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+<div class="container overflow-hidden">
+    <br/>
+    <br/>
+    <h1>We are at the heart of appropriate care</h1>
+    <br/>
+    <br/>
+    <div class="row row-cols-4">
+        <div class = "col"></div>
+      <div class="col">
+        <div class="card bg-dark" style="width: 18rem;">
+            <div class = "card-header"></div>
+            <div class="card-body">
+                <div>
+                    <img src="../../assets/Images/LifeCoachLogIn.jpg" class="user-img" alt="...">
+                </div>
+                <br/>
+                <br/>
+                <button type = "button" class = "btn btn-primary" [routerLink]="['/login/coaches']">Login as a Coach</button>
+                <br/>
+                <br/>
+                <button type = "button" class = "btn btn-primary"  [routerLink]="['/signup/coaches']">Join as a Coach</button>
+            </div>
+            <div class = "card-header"></div>
+          </div>
+      </div>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+      <div class="col">
+        <div class="card bg-dark" style="width: 18rem;">
+            <div class = "card-header"></div>
+            <div class="card-body">
+                <img src="../../assets/Images/UserLogIn.jpg" class="user-img"  alt="...">
+                <br/>
+                <br/>
+                <button type = "button" class = "btn btn-primary"  [routerLink]="['/login/users']">Login as a User</button>
+                <br/>
+                <br/>
+                <button type = "button" class = "btn btn-primary" [routerLink]="['/signup/users']">Join as a Users</button>
+            </div>
+            <div class = "card-header"></div>
+          </div>
+      </div>
+      <div class = "col"></div>
+    </div>
+  </div>
+  <div>
+    <p id ="footer">Copyright &copy; 2020 , WeCare. All rights reserved</p>
+  </div>

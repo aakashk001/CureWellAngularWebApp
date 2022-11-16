@@ -1,1 +1,72 @@
 /* You can add global styles to this file, and also import other style files */
+@import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
+/* You can add global styles to this file, and also import other style files */
+
+nav{
+    background-color: rgb(0, 0, 0);
+}
+
+.logo{
+    font-family: navBrandFont;
+    color:white;
+}
+
+.logo:hover{
+    color: rgb(219, 216, 216);
+}
+
+.myitem{
+    font-family:'Montserrat', sans-serif;
+    font-size:13px;
+}
+
+.mylink{
+    color:white;
+}
+
+.mylink:hover{
+    color: rgb(219, 216, 216);
+}
+
+body{
+    background-image: url(./assets/Images/cloud-2725520_960_720.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* background-color: rgb(226, 227, 228); */
+}
+
+.content{
+    overflow-x: hidden;
+}
+
+#page-container {
+    position: relative;
+    min-height: 100vh;
+  }
+  
+#content-wrap {
+    padding-bottom: 2.5rem;    /* Footer height */
+}
+  
+#footer {
+position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color:black;
+  color: white;
+  height :56px;
+  text-align: center;
+  padding-top: 15px;
+} 
+
+
+@font-face{
+    font-family: navBrandFont;
+    src:url(./assets/Fonts/Oswald-Heavy.ttf);
+}
+
+@font-face{
+    font-family: myFont;
+    src:url(./assets/Fonts/Oswald-Medium.ttf);
+}

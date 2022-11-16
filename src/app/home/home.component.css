@@ -1,0 +1,23 @@
+h1{
+    text-align: center;
+    font-family: navBrandFont;
+    src:url(../../assets/Fonts/Oswald-Heavy.ttf);
+}
+.card-body{
+    background-color: black;
+}
+.card-header,.card-footer{
+    background-color: black;
+}
+
+.btn{
+    width: 250px;
+}
+
+.user-img{
+    width: 100px;
+    height:100px;
+    display: block;
+  margin-left: auto;
+  margin-right: auto;
+}

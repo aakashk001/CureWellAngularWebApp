@@ -1,0 +1,59 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Maria",
+      "password": "maria12345",
+      "gender": "F",
+      "dateOfBirth": "1996-01-01",
+      "email": "maria@gmail.com",
+      "mobileNumber": 1234567890,
+      "pincode": 123456,
+      "city": "Bangalore",
+      "state": "Karnataka",
+      "country": "India"
+    },
+    {
+      "name": "Sera",
+      "password": "Sera@123",
+      "dateOfBirth": "1997-01-01",
+      "gender": "F",
+      "mobileNumber": 1234567890,
+      "email": "sera@gmail.com",
+      "pincode": 123456,
+      "city": "Kozhikode",
+      "state": "Kerala",
+      "country": "India",
+      "id": 2
+    }
+  ],
+  "coaches": [
+    {
+      "id": 1,
+      "name": "Rose",
+      "password": "rose12345",
+      "gender": "F",
+      "dateOfBirth": "1996-01-01",
+      "mobileNumber": 1234567890,
+      "speciality": "Confidence Issues"
+    },
+    {
+      "name": "Setna",
+      "password": "Setna@123",
+      "dateOfBirth": "1995-01-01",
+      "gender": "F",
+      "mobileNumber": 1235678905,
+      "speciality": "Depression Issues",
+      "id": 2
+    }
+  ],
+  "bookings": [
+    {
+      "appointmentDate": "2021-08-12",
+      "slot": "9 AM to 10 AM",
+      "userId": 2,
+      "coachId": 2,
+      "id": 1
+    }
+  ]
+}

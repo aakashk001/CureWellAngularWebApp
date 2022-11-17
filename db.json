@@ -25,6 +25,52 @@
       "state": "Kerala",
       "country": "India",
       "id": 2
+    },
+    {
+      "name": "Aakash",
+      "password": "12345",
+      "gender": "M",
+      "city": "Kangra",
+      "id": 3
+    },
+    {
+      "name": "Aakash ",
+      "password": "Champ456",
+      "mobileNumber": "7009123827",
+      "email": "kondal98@gmail.com",
+      "dateOfBirth": "2022-11-01",
+      "gender": "M",
+      "pincode": "176091",
+      "city": "Sanghol (941)",
+      "state": "Himachal Pradesh",
+      "country": "",
+      "id": 4
+    },
+    {
+      "name": "Amit",
+      "password": "kkkkk123",
+      "mobileNumber": "9816488925",
+      "email": "amit@gmail.com",
+      "dateOfBirth": "1996-12-30",
+      "gender": "M",
+      "pincode": "176909",
+      "city": "Jaipur",
+      "state": "Rajsathan ",
+      "country": "",
+      "id": 5
+    },
+    {
+      "name": "John Cena ",
+      "password": "wwe@123",
+      "mobileNumber": "7009812372",
+      "email": "johncena@wwe.com",
+      "dateOfBirth": "1987-01-28",
+      "gender": "M",
+      "pincode": "1640001",
+      "city": "Washington DC",
+      "state": "Washington DC",
+      "country": "",
+      "id": 6
     }
   ],
   "coaches": [
@@ -45,6 +91,9 @@
       "mobileNumber": 1235678905,
       "speciality": "Depression Issues",
       "id": 2
+    },
+    {
+      "id": 3
     }
   ],
   "bookings": [

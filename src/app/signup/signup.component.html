@@ -6,45 +6,43 @@
           <div class="card shadow-2-strong card-registration" style="border-radius: 15px;">
             <div class="card-body p-4 p-md-5">
               <h3 class="mb-4 pb-2 pb-md-0 mb-md-5">User Profile</h3>
-              <form [formGroup] = "userregisterForm">
-  
+              <form [formGroup] = "userregisterForm" (ngSubmit) = "registerUser(userregisterForm)"> 
                 <div class="row">
                   <div class="col-md-6 mb-4">
   
                     <div class="form-outline">
                       <label class="form-label" for="firstName"> Name</label>
-                      <input type="text" id="firstName" class="form-control form-control-md" formGroupName = "name" />
-                      <p *ngIf = "userregisterForm.controls['name'].errors?.['minLength']" class = "alert alert-danger">Length should be between 3 and 5</p>
+                      <input type="text" id="firstName" class="form-control form-control-md"  formControlName = "name" />
+                      <p *ngIf = "userregisterForm['controls']['name'].errors?.['minlength']" class = "alert alert-danger">Length should be between 3 and 5</p>
                     </div>
   
                   </div>
                   <div class="col-md-6 mb-4">
                     <div class="form-outline">
-                      <label class="form-label" for="password">Last Name</label>
-                      <input type="password" id="password" class="form-control form-control-md" />
+                      <label class="form-label" for="password">Password</label>
+                      <input type="text" id="password" class="form-control form-control-md" formControlName = "password" />
                     </div>
                   </div>
                 </div>
   
                 <div class="row">
                   <div class="col-md-6 mb-4 d-flex align-items-center">
-  
                     <div class="form-outline datepicker w-100">
                       <label for="birthdayDate" class="form-label">Birthday</label>
-                      <input type="date" class="form-control form-control-md" id="birthdayDate" />
+                      <input type="date" class="form-control form-control-md" id="birthdayDate" formControlName = "dateOfBirth" />
                     </div>
                   </div>
                   <div class="col-md-6 mb-4">
                 <h6 class="mb-2 pb-1">Gender: </h6>  
                     <div class="form-check form-check-inline">
-                      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="femaleGender"
-                        value="option1" checked />
-                      <label class="form-check-label" for="femaleGender">Female</label>
+                      <input class="form-check-input" type="radio" name="gender" id="femaleGender"
+                        value="F"  formControlName = "gender"/>
+                      <label class="form-check-label" >Female</label>
                     </div>
   
                     <div class="form-check form-check-inline">
-                      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="maleGender"
-                        value="option2" />
+                      <input class="form-check-input" type="radio" name="gender" id="maleGender"
+                        value="M"formControlName = "gender" />
                       <label class="form-check-label" for="maleGender">Male</label>
                     </div>
                   </div>
@@ -53,13 +51,14 @@
                   <div class="col-md-6 mb-4 pb-2">
                     <div class="form-outline">
                       <label class="form-label" for="emailAddress">Email</label>
-                      <input type="email" id="emailAddress" class="form-control form-control-md" />
+                      <input type="email" id="emailAddress" class="form-control form-control-md" formControlName = "email" />
+                        <p *ngIf = "userregisterForm.controls['email'].errors?.['required']" class = "alert alert-danger">Email Id is required</p>
                     </div>
                   </div>
                   <div class="col-md-6 mb-4 pb-2">
                     <div class="form-outline">
-                      <label class="form-label" for="phoneNumber">Phone Number</label>
-                      <input type="tel" id="phoneNumber" class="form-control form-control-md" />
+                      <label class="form-label" for="phoneNumber" >Phone Number</label>
+                      <input type="tel" id="phoneNumber" class="form-control form-control-md" formControlName = "mobileNumber"/>
                     </div>
                   </div>
                 </div>
@@ -67,13 +66,13 @@
                   <div class="col-md-6 mb-4 pb-2">
                     <div class="form-outline">
                       <label class="form-label" for="pincode">Pincode</label>
-                      <input type="text" id="pincode" class="form-control form-control-md" />
+                      <input type="text" id="pincode" class="form-control form-control-md" formControlName = "pincode" />
                     </div>
                   </div>
                   <div class="col-md-6 mb-4 pb-2">
                     <div class="form-outline">
-                      <label class="form-label" for="city">Phone Number</label>
-                      <input type="text" id="city" class="form-control form-control-md" />
+                      <label class="form-label" for="city">City</label>
+                      <input type="text" id="city" class="form-control form-control-md" formControlName = "city" />
                     </div>
                   </div>
                 </div>
@@ -82,13 +81,90 @@
                   <div class="col-md-6 mb-4 pb-2">
                     <div class="form-outline">
                       <label class="form-label" for="state">State</label>
-                      <input type="text" id="state" class="form-control form-control-md" />
+                      <input type="text" id="state" class="form-control form-control-md" formControlName = "state"/>
                     </div>
                   </div>
                   <div class="col-md-6 mb-4 pb-2">
                     <div class="form-outline">
                       <label class="form-label" for="country">Country</label>
-                      <input type="text" id="country" class="form-control form-control-md" />
+                      <input type="text" id="country" class="form-control form-control-md" fromControlName = "country" />
+                    </div>
+                  </div>
+                </div>
+                <div class="text-center">
+                  <button type = "submit" class = "btn btn-primary">Register</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<div *ngIf ="!formDisplay" >
+  <section class="vh-100 body">
+    <div class="container py-5 h-100">
+      <div class="row justify-content-center align-items-center h-100">
+        <div class="col-12 col-lg-9 col-xl-7">
+          <div class="card shadow-2-strong card-registration" style="border-radius: 15px;">
+            <div class="card-body p-4 p-md-5">
+              <h3 class="mb-4 pb-2 pb-md-0 mb-md-5">Life Coach Profile</h3>
+              <form [formGroup] = "coachregisterForm">
+  
+                <div class="row">
+                  <div class="col-md-6 mb-4">
+  
+                    <div class="form-outline">
+                      <label class="form-label" for="name">Name</label>
+                      <input type="text" id="name" class="form-control form-control-md"  formControlName = "name" />
+                      <!-- <p *ngIf = "userregisterForm['controls']['name'].errors?.['minlength']" class = "alert alert-danger">Length should be between 3 and 5</p> -->
+                    </div>
+  
+                  </div>
+                  <div class="col-md-6 mb-4">
+                    <div class="form-outline">
+                      <label class="form-label" for="pass">Password</label>
+                      <input type="text" id="pass" class="form-control form-control-md" />
+                    </div>
+                  </div>
+                </div>
+  
+                <div class="row">
+                  <div class="col-md-6 mb-4 d-flex align-items-center">
+                    <div class="form-outline datepicker w-100">
+                      <label for="dob" class="form-label">Date of Birth</label>
+                      <input type="date" class="form-control form-control-md" id="dob" />
+                    </div>
+                  </div>
+                  <div class="col-md-6 mb-4">
+                <h6 class="mb-2 pb-1">Gender: </h6>  
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="female"
+                        value="Female" checked />
+                      <label class="form-check-label" for="female">Female</label>
+                    </div>
+  
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="radio" name="inline" id="male"
+                        value="male" />
+                      <label class="form-check-label" for="male">Male</label>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6 mb-4 pb-2">
+                    <div class="form-outline">
+                      <label class="form-label" for="spec">Speciality</label>
+                      <input type="text" id="spec" class="form-control form-control-md"/>
+                        <!-- <p *ngIf = "userregisterForm.controls['email'].errors?.['required']" class = "alert alert-danger">Email Id is required</p> -->
+                    </div>
+                  </div>
+                  <div class="col-md-6 mb-4 pb-2">
+                    <div class="form-outline">
+                      <label class="form-label" for="mobilenum">Mobile Number</label>
+                      <input type="tel" id="mobilenum" class="form-control form-control-md" />
                     </div>
                   </div>
                 </div>

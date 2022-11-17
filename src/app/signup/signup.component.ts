@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router, TitleStrategy, UrlHandlingStrategy } from '@angular/router';
 import { SignupService } from './signup.service';
 
 @Component({
@@ -10,25 +10,30 @@ import { SignupService } from './signup.service';
 })
 export class SignupComponent implements OnInit {
 
-  constructor(private formbuilder:FormBuilder,private route:ActivatedRoute, private service :SignupService) { }
+  constructor(private formbuilder:FormBuilder,private route:ActivatedRoute, private service :SignupService, private router:Router) { }
 
   role! :string ;
   signUpTitle!:string;
   signUpImg!:string;
-  formDisplay! :boolean;
+  coachpage!:boolean;
+  userpage!:boolean;
   errorMessage = "";
   userregisterForm!:FormGroup<any>;
   coachregisterForm!:FormGroup;
   userId!:string;
   coachId!:string;
+  successpage!:boolean;
 
   ngOnInit(): void {
+    
     this.role  = this.route.snapshot.params['role'];
     if(this.role == "users"){
-      this.formDisplay = true;
+      this.signUpImg = "../../assets/Images/UserLogIn.jpg";
+      this.userpage = true;
     }
     else{
-      this.formDisplay = false;
+      this.coachpage = true;
+      this.signUpImg = "../../assets/Images/LifeCoachLogIn.jpg";
     }
     this.userregisterForm = this.formbuilder.group({
       name:['',[Validators.minLength(3),Validators.maxLength(50)]],
@@ -42,20 +47,35 @@ export class SignupComponent implements OnInit {
       state:['',[Validators.minLength(6),Validators.maxLength(20)]],
       country:['',[Validators.minLength(6),Validators.maxLength(20)]]
     })
-    console.log(this.userregisterForm.controls['name'].errors?.['maxlength']);
+    this.coachregisterForm = this.formbuilder.group({
+      name:['',[Validators.maxLength(50),Validators.minLength(3)]],
+      password:['',[Validators.maxLength(10),Validators.minLength(5)]],
+      mobileNumber:['',Validators.pattern("^[0-9]{10}$")],
+      dateOfBirth:[''],
+      gender:['',[Validators.required]],
+      speciality:['',[Validators.maxLength(50),Validators.minLength(10)]]
+    })
+  }
+  coachregister(form:FormGroup){
+    console.log(form.value);
+    this.service.register(form.value,this.role).subscribe(response=>{if(response){
+      this.coachId = JSON.stringify(response.id);
+      this.successpage = true;
+      this.coachpage = false;
+      this.userpage = false;
+    }})
+  }
+  registerUser(form:FormGroup){
+    console.log(form.value);
+    this.service.register(form.value,this.role).subscribe(response=>{if(response){
+      this.userId = JSON.stringify(response.id);
+      this.successpage = true;
+      this.coachpage = false;
+      this.userpage = false;
+    }})
   }
 
-
-
-  registerUser(form:FormGroup){
-    // console.log(form.value.name);
-    // console.log(form.value.password);
-    // console.log(form.value.gender);
-    // const users ={ "name" : form.value.name , "password":form.value.name ,"gender":form.value.gender,"dateOfBirth":form.value.dateOfBirth
-    // }
-    console.log(form.value);
-    this.service.register(form.value).subscribe(response=>{if(response){
-      alert(`New UserAdded with ID ${response.ID}`);
-    }})
+  directLogin(){
+    this.router.navigate(['/login',this.role])
   }
 }

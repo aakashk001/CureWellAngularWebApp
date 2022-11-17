@@ -1,11 +1,14 @@
-<div *ngIf ="formDisplay" >
+<link href="https://fonts.googleapis.com/css?family=Abel&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+<div *ngIf ="userpage" >
 <section class="vh-100 body">
     <div class="container py-5 h-100">
       <div class="row justify-content-center align-items-center h-100">
         <div class="col-12 col-lg-9 col-xl-7">
           <div class="card shadow-2-strong card-registration" style="border-radius: 15px;">
             <div class="card-body p-4 p-md-5">
-              <h3 class="mb-4 pb-2 pb-md-0 mb-md-5">User Profile</h3>
+             
+              <h3 class="mb-4 pb-2 pb-md-0 mb-md-5">  <img [src]="signUpImg" alt="img">User Profile</h3>
               <form [formGroup] = "userregisterForm" (ngSubmit) = "registerUser(userregisterForm)"> 
                 <div class="row">
                   <div class="col-md-6 mb-4">
@@ -13,7 +16,7 @@
                     <div class="form-outline">
                       <label class="form-label" for="firstName"> Name</label>
                       <input type="text" id="firstName" class="form-control form-control-md"  formControlName = "name" />
-                      <p *ngIf = "userregisterForm['controls']['name'].errors?.['minlength']" class = "alert alert-danger">Length should be between 3 and 5</p>
+                      <p *ngIf = "userregisterForm['controls']['name'].errors?.['minlength'] || userregisterForm['controls']['name'].touched">Length should be between 3 and 5</p>
                     </div>
   
                   </div>
@@ -21,6 +24,7 @@
                     <div class="form-outline">
                       <label class="form-label" for="password">Password</label>
                       <input type="text" id="password" class="form-control form-control-md" formControlName = "password" />
+                      <p *ngIf = "userregisterForm['controls']['password'].errors?.['minlength'] || userregisterForm['controls']['password'].touched">Password should be between 5 and 10 characters</p>
                     </div>
                   </div>
                 </div>
@@ -52,13 +56,15 @@
                     <div class="form-outline">
                       <label class="form-label" for="emailAddress">Email</label>
                       <input type="email" id="emailAddress" class="form-control form-control-md" formControlName = "email" />
-                        <p *ngIf = "userregisterForm.controls['email'].errors?.['required']" class = "alert alert-danger">Email Id is required</p>
+                        <p *ngIf = "userregisterForm.controls['email'].errors?.['required'] && userregisterForm['controls']['email'].touched">Email Id should be valid</p>
+                        
                     </div>
                   </div>
                   <div class="col-md-6 mb-4 pb-2">
                     <div class="form-outline">
                       <label class="form-label" for="phoneNumber" >Phone Number</label>
                       <input type="tel" id="phoneNumber" class="form-control form-control-md" formControlName = "mobileNumber"/>
+                      <p *ngIf = "userregisterForm.controls['mobileNumber'].errors?.['pattern']">MobileNumber should have 10 digits</p>
                     </div>
                   </div>
                 </div>
@@ -67,12 +73,14 @@
                     <div class="form-outline">
                       <label class="form-label" for="pincode">Pincode</label>
                       <input type="text" id="pincode" class="form-control form-control-md" formControlName = "pincode" />
+                      <p *ngIf = "userregisterForm.controls['pincode'].errors?.['pattern'] || userregisterForm['controls']['pincode'].touched">Pincode should have 6 digits</p>
                     </div>
                   </div>
                   <div class="col-md-6 mb-4 pb-2">
                     <div class="form-outline">
                       <label class="form-label" for="city">City</label>
                       <input type="text" id="city" class="form-control form-control-md" formControlName = "city" />
+                      <p *ngIf = "userregisterForm.controls['city'].errors?.['minlength'] || userregisterForm['controls']['city'].touched">City should have 3 to 20 characters</p>
                     </div>
                   </div>
                 </div>
@@ -82,12 +90,14 @@
                     <div class="form-outline">
                       <label class="form-label" for="state">State</label>
                       <input type="text" id="state" class="form-control form-control-md" formControlName = "state"/>
+                      <p *ngIf = "userregisterForm.controls['state'].errors?.['minlength'] || userregisterForm['controls']['state'].touched">State should have 3 to 20 characters</p>
                     </div>
                   </div>
                   <div class="col-md-6 mb-4 pb-2">
                     <div class="form-outline">
                       <label class="form-label" for="country">Country</label>
                       <input type="text" id="country" class="form-control form-control-md" fromControlName = "country" />
+                      <p *ngIf = "userregisterForm.controls['country'].errors?.['minlength'] || userregisterForm['controls']['country'].touched">Country should have 3 to 20 characters</p>
                     </div>
                   </div>
                 </div>
@@ -103,15 +113,15 @@
   </section>
 </div>
 
-<div *ngIf ="!formDisplay" >
+<div *ngIf ="coachpage" >
   <section class="vh-100 body">
     <div class="container py-5 h-100">
       <div class="row justify-content-center align-items-center h-100">
         <div class="col-12 col-lg-9 col-xl-7">
           <div class="card shadow-2-strong card-registration" style="border-radius: 15px;">
             <div class="card-body p-4 p-md-5">
-              <h3 class="mb-4 pb-2 pb-md-0 mb-md-5">Life Coach Profile</h3>
-              <form [formGroup] = "coachregisterForm">
+              <h3 class="mb-4 pb-2 pb-md-0 mb-md-5"><img [src]="signUpImg" alt="img">Life Coach Profile</h3>
+              <form [formGroup] = "coachregisterForm" (ngSubmit) = "coachregister(coachregisterForm)">
   
                 <div class="row">
                   <div class="col-md-6 mb-4">
@@ -119,14 +129,16 @@
                     <div class="form-outline">
                       <label class="form-label" for="name">Name</label>
                       <input type="text" id="name" class="form-control form-control-md"  formControlName = "name" />
-                      <!-- <p *ngIf = "userregisterForm['controls']['name'].errors?.['minlength']" class = "alert alert-danger">Length should be between 3 and 5</p> -->
+                     
+                      <p *ngIf = "coachregisterForm['controls']['name'].errors?.['minlength'] || coachregisterForm['controls']['name'].touched">Name should be between 3 and 5</p> 
                     </div>
   
                   </div>
                   <div class="col-md-6 mb-4">
                     <div class="form-outline">
-                      <label class="form-label" for="pass">Password</label>
-                      <input type="text" id="pass" class="form-control form-control-md" />
+                      <label class="form-label" for="pass"  >Password</label>
+                      <input type="text" id="pass" class="form-control form-control-md" formControlName = "password" />
+                      <p *ngIf = "coachregisterForm['controls']['password'].errors?.['minlength'] || coachregisterForm['controls']['password'].touched">Password should be between 5 and 10 characters</p>
                     </div>
                   </div>
                 </div>
@@ -134,21 +146,20 @@
                 <div class="row">
                   <div class="col-md-6 mb-4 d-flex align-items-center">
                     <div class="form-outline datepicker w-100">
-                      <label for="dob" class="form-label">Date of Birth</label>
-                      <input type="date" class="form-control form-control-md" id="dob" />
+                      <label for="dob" class="form-label" >Date of Birth</label>
+                      <input type="date" class="form-control form-control-md" id="dob" formControlName = "dateOfBirth" />
                     </div>
                   </div>
                   <div class="col-md-6 mb-4">
                 <h6 class="mb-2 pb-1">Gender: </h6>  
                     <div class="form-check form-check-inline">
-                      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="female"
-                        value="Female" checked />
+                      <input class="form-check-input" type="radio" name="gender" id="female" formControlName = "gender"
+                        value="F" checked />
                       <label class="form-check-label" for="female">Female</label>
                     </div>
   
                     <div class="form-check form-check-inline">
-                      <input class="form-check-input" type="radio" name="inline" id="male"
-                        value="male" />
+                      <input class="form-check-input" type="radio" name="gender" id="male" value="M"  formControlName = "gender" />
                       <label class="form-check-label" for="male">Male</label>
                     </div>
                   </div>
@@ -157,21 +168,21 @@
                   <div class="col-md-6 mb-4 pb-2">
                     <div class="form-outline">
                       <label class="form-label" for="spec">Speciality</label>
-                      <input type="text" id="spec" class="form-control form-control-md"/>
-                        <!-- <p *ngIf = "userregisterForm.controls['email'].errors?.['required']" class = "alert alert-danger">Email Id is required</p> -->
+                      <input type="text" id="spec" class="form-control form-control-md" formControlName = "speciality"/>
+                      <p *ngIf = "coachregisterForm['controls']['speciality'].errors?.['minlength'] || coachregisterForm['controls']['speciality'].touched">Speciality should have atleast 10 characters</p>
                     </div>
                   </div>
                   <div class="col-md-6 mb-4 pb-2">
                     <div class="form-outline">
                       <label class="form-label" for="mobilenum">Mobile Number</label>
-                      <input type="tel" id="mobilenum" class="form-control form-control-md" />
+                      <input type="tel" id="mobilenum" class="form-control form-control-md"formControlName = "mobileNumber" />
+                      <p *ngIf = "userregisterForm['controls']['mobileNumber'].errors?.['minlength'] || userregisterForm['controls']['mobileNumber'].touched">Mobile Number should  10 characters</p>
                     </div>
                   </div>
                 </div>
                 <div class="text-center">
-                  <button type = "button" class = "btn btn-primary">Register</button>
+                  <button type = "submit" class = "btn btn-primary">Register</button>
                 </div>
-  
               </form>
             </div>
           </div>
@@ -179,4 +190,33 @@
       </div>
     </div>
   </section>
+</div>
+
+<div *ngIf ="successpage" class = "container">
+  <br/>
+  <br/>
+  <br/>
+  <br/>
+    <div class = "row">
+      <div class = "col"></div>
+      <div class = "col"></div>
+      <div class = "col"></div>
+      <div class = "col">
+        <img [src]="signUpImg" alt="img">
+      </div>
+      <div class = "col"></div>
+      <div class = "col"></div>
+      <div class = "col"></div>
+      <div class = "row ; text-center">
+        <div class = "col">
+          <h3>Account Created Successfully</h3>
+          <h5>Your Coach Id is {{userId}} {{coachId}}</h5>
+          <button class = "btn btn-primary" (click)="directLogin()">Login Now</button>
+        </div>
+      </div>
+    </div>
+</div>
+
+<div  *ngIf ="successpage" >
+  <p id ="footer">Copyright &copy; 2020 , WeCare. All rights reserved</p>
 </div>

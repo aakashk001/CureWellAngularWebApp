@@ -60,3 +60,12 @@
         background-color: green;
         width:400px
     }
+    img{
+      width: 100px;
+      height: 100px;
+    }
+    p{
+      color: red;
+      src:url(../../assets/Fonts/Oswald-Extra-LightItalic.ttf);
+      text-align: left;
+    }

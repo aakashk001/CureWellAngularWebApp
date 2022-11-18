@@ -17,7 +17,7 @@ export class AppComponent {
       this.logout = false;
       this.uProfile = false;
       this.cProfile = false;
-      if (router.url === '/user/home' || router.url === '/user/profile' || router.url === '/user/appointments') {
+      if (router.url === '/user' || router.url === '/user/profile' || router.url === '/user/appointments') {
         this.logout = true;
         this.uProfile = true;
         this.cProfile = false;

@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./coachhome.component.css']
 })
 export class CoachhomeComponent implements OnInit {
+  constructor(){}
   ngOnInit() {
   }
 }

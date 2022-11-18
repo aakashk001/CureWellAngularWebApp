@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
-import { HttpClient } from '@angular/common/http';
+import { Observable, tap } from 'rxjs';
+import { HttpClient, HttpParams } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -8,7 +8,11 @@ import { HttpClient } from '@angular/common/http';
 export class LoginService {
 
   
-  constructor() { }
+  constructor(private http:HttpClient) { }
 
 
+  login(users:any, id:any):Observable<any>{
+    let httparms2 = new HttpParams().set('id',id)
+    return this.http.get<any>(`http://localhost:3000/${users}`,{params:httparms2}).pipe(tap(data=>console.log(data))) 
+  }
 }

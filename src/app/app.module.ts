@@ -9,6 +9,11 @@ import { SignupComponent } from './signup/signup.component';
 import { UserComponent } from './user/user.component';
 import {CoachprofileComponent} from './coach/coach-profile/coachprofile.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { CoachModule } from './coach/coach.module';
+import { UserModule } from './user/user.module';
+import { LoginService } from './login/login.service';
+import { SignupService } from './signup/signup.service';
+import { CoachRoutingModule } from './coach/coach-routing.module';
 
 @NgModule({
   declarations: [
@@ -16,14 +21,15 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
     HomeComponent,
     LoginComponent,
     SignupComponent,
-    UserComponent,
-   CoachprofileComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    UserModule,
+    CoachModule,
+    CoachRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

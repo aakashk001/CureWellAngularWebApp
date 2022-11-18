@@ -1,0 +1,30 @@
+img{
+    width: 60px;
+    height: 60px;
+}
+h4{
+    color: white;
+    font-family: myFont;
+    src:url(../../assets/Fonts/Oswald-Light.ttf);
+    text-align: center;
+  }
+
+.row{
+    text-align: center;
+}
+.center-screen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 100vh;
+  }
+
+  .form-control{
+    width:320px
+  }
+  .btn{
+    background-color: rgb(19, 19, 141);
+    width:320px;
+    color:white
+  }

@@ -32,7 +32,9 @@ const constants = {
     appointmentRescheduled: `Your appointment is rescheduled successfully`,
     appointmentCancelled: `Your appointment is cancelled successfully`,
     cancelConfirm: `Are you sure you need to cancel the appointment?`,
-    noCoaches:`No coaches currently available`
+    noCoaches:`No coaches currently available`,
+    userplaceholder:`User Id`,
+    coachplaceholder:`Coach Id`,
 };
 
 export default constants;

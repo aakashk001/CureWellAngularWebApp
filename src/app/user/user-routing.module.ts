@@ -4,10 +4,7 @@ import { UserhomeComponent } from './userhome/userhome.component';
 
 
 const userRoutes: Routes = [
-    {
-        path: '', 
-        component: UserhomeComponent
-    }
+    {path:'home',component:UserhomeComponent}
 ];
 @NgModule({
     imports: [RouterModule.forChild(userRoutes)],

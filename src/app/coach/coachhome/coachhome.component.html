@@ -1,0 +1,38 @@
+<link href="https://fonts.googleapis.com/css?family=Abel&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+<div class = "container">
+    <div *ngIf = "showcontent" class = "row">
+        <div class = "col"></div>
+        <div class = "col">
+            &nbsp;&nbsp;&nbsp;
+            <div  class = "card bg-dark">
+            <div class  ="card-header">
+                <div>
+                    <h3>Appointment Date :<br/> {{scheduleDatails[0].appointmentDate}} </h3>
+                    <h4>Slot: {{scheduleDatails[0].slot}}</h4>
+                    <br/>
+                    <p>Booking id :{{scheduleDatails[0].id}}</p>
+                    <p>UserId : {{scheduleDatails[0].userId}}</p>
+                </div>
+            </div>
+            </div>
+        </div>
+        <div class = "col"></div>
+    </div>
+</div>
+<div class = "container">
+    <div *ngIf ="!showcontent"  class = "row">
+        <div class ="col"></div>
+         <div class ="col" >
+
+        &nbsp;&nbsp;&nbsp;
+        <img [src] = "imgUrl" alt = "img">
+        <h2>{{msg}}</h2>
+    </div>
+    <div class ="col"></div>
+    </div>
+</div>
+
+<div>
+    <p id ="footer">Copyright &copy; 2020 , WeCare. All rights reserved</p>
+  </div>

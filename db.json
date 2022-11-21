@@ -189,12 +189,13 @@
     }
   ],
   "bookings": [
-    {
+   {
       "appointmentDate": "2021-08-12",
       "slot": "9 AM to 10 AM",
       "userId": 2,
       "coachId": 2,
       "id": 1
     }
+ 
   ]
 }

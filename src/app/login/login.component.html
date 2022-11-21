@@ -5,7 +5,7 @@
             &nbsp;&nbsp;&nbsp;
             <div class="card bg-dark shadow border">
                 <div class="card-body d-flex flex-column align-items-center">
-                        <h4><img [src] = "imgSrc" alt = "img"> Login as Life Coach</h4>
+                        <h4><img [src] = "imgSrc" alt = "img"> {{loginTitle}}</h4>
                         <div class = "card-body">
                             <form [formGroup] = "loginForm" (ngSubmit)="login(loginForm)" >
                                 <div class ="form-group">
@@ -16,7 +16,7 @@
                                     <p *ngIf = "loginForm.controls['password'].errors?.['minlength']" style="color:red">Password should be have 5 to 10 characters</p>
                                     <br/>
                                     <button type = "submit" class  ="btn">Login</button>
-                                    <p *ngIf=" errorMessage">{{errorMessage}}</p>
+                                    <p *ngIf=" errorMessage" style="color:red">{{errorMessage}}</p>
                                 </div>
                             </form>
                         </div>

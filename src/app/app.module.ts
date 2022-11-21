@@ -14,6 +14,8 @@ import { UserModule } from './user/user.module';
 import { LoginService } from './login/login.service';
 import { SignupService } from './signup/signup.service';
 import { CoachRoutingModule } from './coach/coach-routing.module';
+import { CommonModule } from '@angular/common'; 
+import { CoachComponent } from './coach/coach.component';
 
 @NgModule({
   declarations: [
@@ -23,13 +25,13 @@ import { CoachRoutingModule } from './coach/coach-routing.module';
     SignupComponent,
   ],
   imports: [
+    CommonModule,
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
     UserModule,
-    CoachModule,
-    CoachRoutingModule
+    CoachModule
   ],
   providers: [],
   bootstrap: [AppComponent]

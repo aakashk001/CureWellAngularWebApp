@@ -1,0 +1,29 @@
+h3{
+    color: white;
+    font-family: myFont;
+    src:url(../../../assets/Fonts/Oswald-Light.ttf);
+    text-align: center;
+}
+h4{
+    color: white;
+    font-family: myFont;
+    src:url(../../../assets/Fonts/Oswald-Light.ttf);
+    text-align: center;
+}
+p{
+    color: white;
+    font-family: myFont;
+    src:url(../../../assets/Fonts/Oswald-Light.ttf);
+    text-align: center;
+}
+
+img{
+    width :100px;
+    height :100px;
+}
+
+h2{
+    color:black;
+    text-align: center;
+    width :400px
+}

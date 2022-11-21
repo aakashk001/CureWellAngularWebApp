@@ -1,0 +1,40 @@
+img {
+    width: 200px;
+    height: 200px;
+    margin-left: 10px;
+    border-radius: 50%;
+  }
+.card {
+    background-color: black;
+    width: 500px;
+    height:250px ;
+    margin-top: 150px;
+    margin-left: 400px;
+}
+
+* {
+    box-sizing: border-box;
+  } 
+  
+  .row {
+    display: flex;
+    width :500px
+  }
+  
+  /* Create two equal columns that sits next to each other */
+  /* .column {
+    flex: 50%;
+    padding: 10px;
+    height: 200px; Should be removed. Only for demonstration */
+  /* } */ 
+  .col{
+    flex: 50%;
+    padding: 10px;
+    height: 220px;
+    width:200px
+  }
+
+  h2,h4,h6{
+    color: white;
+  }
+  

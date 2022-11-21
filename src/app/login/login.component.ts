@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { tap } from 'rxjs';
@@ -10,7 +10,7 @@ import { LoginService } from './login.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-
+   expotId!: string;
   imgSrc! :string;
   role!:string;
   loginTitle!:string;
@@ -22,7 +22,9 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
     this.role = this.route.snapshot.params['role']
+    console.log(this.role);
     if(this.role == "users"){
+      console.log(this.role)
       this.imgSrc = constants.userImg;
       this.loginTitle = constants.userLogin;
       this.placeholder = constants.userplaceholder;
@@ -43,15 +45,17 @@ export class LoginComponent implements OnInit {
     // console.log(form.value.Id);
     // console.log(form.value.password);
     // console.log(this.role)
+
+    localStorage.setItem('id',form.value.Id);
     this.service.login(this.role,form.value.Id).subscribe({
       next:(data)=>{
         console.log(data[0].password);
         if(data[0].password == form.value.password){
          if(this.role=="users"){
-          this.router.navigate(['/user'])
+          this.router.navigate(['/user/home'])
          }
          else{
-          this.router.navigate(['/coach'])
+          this.router.navigate(['/coach/home'])
          }
         }
         else{

@@ -1,0 +1,64 @@
+<div *ngIf = "showcoach" class = "product">
+    <div class = "subgrid">
+        <div *ngFor = "let coach of coachArray">
+            <div class="card flex-row"><img [src]="imgUrl" alt ="img"/>
+                <div class="card-body">
+                  <h4 class="card-title h5 h4-sm">{{coach.name}}</h4>
+                  <h6>Coach Id : {{coach.id}}</h6>
+                  <p >Mobile No {{coach.mobileNumber}}</p>
+                  <p>Speciality {{coach.speciality}}</p>
+                  <button type ="button" class = "btn btn-primary" (click) = "showcoach = false">Book an Appointment</button>
+                </div>
+              </div>
+        </div>
+        </div>
+    </div>
+
+<div *ngIf = "!showcoach" class = "container">
+    <br/>
+    <br/>
+    <br/>
+            <div class = "row">
+                <div class = "col"></div>
+                <div class = "col">
+                    <div  id ="appontment" class = "card bg-black">
+                        <div class ="card-header">
+                            <h2><img alt = "img" class = "icon" src = "../../../assets/Images/Notepad_icon.svg.png">Proceed with your Appointment</h2>
+                            <br/>
+                            <form >
+                                <div class = "form-group">
+                                    <label for = "date" class = "form-label" style ="color: white;" >Date of Appointment</label>
+                                    <input type ="date" class ="form-control" id = "date" >
+                                </div>
+                                <br/>
+                                <div class = "form-group">
+                                    <label class ="form-label" style=" color:white">Preferred Slot</label>
+                                    &nbsp;
+                                    <br/>
+                                    <input type = "radio" value = "9AM to 10AM" name = "slot" style ="color:white">&nbsp;<label style="color:white;font-size: small;">9AM to 10AM</label>
+                                    &nbsp; 
+                                    <input type = "radio" value = "10AM to 11AM" name = "slot" style ="color:white">&nbsp;<label style="color:white;font-size: small;">10AM to 11AM</label> 
+                                    &nbsp; 
+                                    <input type = "radio" value = "11AM to 12AM" name = "slot" style ="color:white">&nbsp;<label style="color:white;font-size: small;">11AM to 12AM</label> 
+                                    &nbsp; 
+                                    <input type = "radio" value = "2PM to 3PM" name = "slot" style ="color:white">&nbsp;<label style="color:white;font-size: small;">2PM to 3PM</label>
+                                  
+                                    <input type = "radio" value = "3PM to 4PM" name = "slot" style ="color:white">&nbsp;<label style="color:white;font-size: small;">3PM to 4PM</label>  
+                                    &nbsp; 
+                                    <input type = "radio" value = "4PM to 5PM" name = "slot" style ="color:white">&nbsp;<label style="color:white;font-size: small;">4PM to 5PM</label> 
+                                </div>
+                                    <br/>
+                                    <button type = "submit" class = "btn-conform">Confirm your Booking</button>
+                                
+                            </form>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class = "col"></div>
+            </div>
+</div>
+
+<div  *ngIf = "!showcoach" >
+    <p id ="footer">Copyright &copy; 2020 , WeCare. All rights reserved</p>
+  </div>

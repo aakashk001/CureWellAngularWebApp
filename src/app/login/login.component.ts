@@ -42,10 +42,6 @@ export class LoginComponent implements OnInit {
   }
 
   login(form:FormGroup){
-    // console.log(form.value.Id);
-    // console.log(form.value.password);
-    // console.log(this.role)
-
     localStorage.setItem('id',form.value.Id);
     this.service.login(this.role,form.value.Id).subscribe({
       next:(data)=>{

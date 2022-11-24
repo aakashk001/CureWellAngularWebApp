@@ -1,1 +1,29 @@
-<h1>User Profile</h1>
+<div class  ="container">
+    <br/>
+    <br/>
+    <br/>
+    <div class = "row">
+        <div class = "col"></div>
+        <div class = "col">
+            <div class = "card flex-row"><img [src] = 'imgUrl' alt = "img">
+                <div class = "card-body">
+                    <h4>{{userDetails.name}}</h4>
+                    <p>Date of Birth : {{userDetails.dateOfBirth}}<br/>
+                    Email Id : {{userDetails.email}} <br/>
+                    Mobile No : {{userDetails.mobileNumber}}<br/>
+                    Address : {{userDetails.city}}{{userDetails.state}}{{userDetails.country}}<br/>
+                    Pincode : {{userDetails.pincode}}   
+                         </p>
+                <button class = "btn" [routerLink]="['/user/home']">Go Back</button>
+                </div>
+              
+            </div>
+        </div>
+        <div class = "col"></div>
+    </div>
+</div>
+
+
+<div>
+    <p id ="footer">Copyright &copy; 2020 , WeCare. All rights reserved</p>
+  </div>

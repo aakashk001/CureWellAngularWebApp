@@ -9,10 +9,28 @@ import constants from '../../../assets/constant';
   styleUrls: ['./userprofile.component.css']
 })
 export class UserprofileComponent implements OnInit {
-  constructor() { }
+
+  imgUrl!:string;
+  userId!:any;
+userDetails!:any;
+  constructor(private serive :UserprofileService) { }
   
   ngOnInit(): void {
+    this.imgUrl = constants.maleImg;
+    this.userId = localStorage.getItem('id');
+    this.viewDetails()
   }
-
+viewDetails(){
+  this.serive.viewDetails(this.userId).subscribe({
+    next: data => {this.userDetails = data
+    if(this.userDetails.gender == "F"){
+      this.imgUrl = constants.femaleImg;
+    }
+    else{
+      this.imgUrl = constants.maleImg;
+    }
+    }
+  })
+}
 
 }

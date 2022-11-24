@@ -202,76 +202,7 @@
       "userId": "1",
       "coachId": 3,
       "id": 2
-    },
-    {
-      "appointmentDate": "2022-11-27",
-      "slot": "9AM to 10AM",
-      "userId": "1",
-      "coachId": 1,
-      "id": 3
-    },
-    {
-      "appointmentDate": "2022-11-24",
-      "slot": "10AM to 11AM",
-      "userId": "1",
-      "coachId": 1,
-      "id": 4
-    },
-    {
-      "appointmentDate": "2022-11-29",
-      "slot": "9AM to 10AM",
-      "userId": "1",
-      "coachId": 1,
-      "id": 5
-    },
-    {
-      "appointmentDate": "2022-11-12",
-      "slot": "10AM to 11AM",
-      "userId": "1",
-      "coachId": 1,
-      "id": 6
-    },
-    {
-      "appointmentDate": "2022-11-26",
-      "slot": "9AM to 10AM",
-      "userId": "1",
-      "coachId": 1,
-      "id": 7
-    },
-    {
-      "appointmentDate": "2022-11-28",
-      "slot": "11AM to 12AM",
-      "userId": "1",
-      "coachId": 1,
-      "id": 8
-    },
-    {
-      "appointmentDate": "2022-11-30",
-      "slot": "4PM to 5PM",
-      "userId": "1",
-      "coachId": 1,
-      "id": 9
-    },
-    {
-      "appointmentDate": "2022-11-24",
-      "slot": "10AM to 11AM",
-      "userId": "1",
-      "coachId": 1,
-      "id": 10
-    },
-    {
-      "appointmentDate": "2022-11-22",
-      "slot": "10AM to 11AM",
-      "userId": "1",
-      "coachId": 1,
-      "id": 11
-    },
-    {
-      "appointmentDate": "2022-11-30",
-      "slot": "11AM to 12AM",
-      "userId": "1",
-      "coachId": 1,
-      "id": 12
     }
+    
   ]
 }

@@ -10,6 +10,8 @@ export class AppointmentsComponent implements OnInit {
 
   constructor() {  }
  ngOnInit(){}
+  
+
 }
 
 function dateCalculator(fc: FormControl) {
